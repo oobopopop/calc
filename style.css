@@ -1,0 +1,94 @@
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 5rem 5rem 5rem 5rem;
+    grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+    grid-template-areas: 
+    "display display display display"
+    "seven eight nine plus"
+    "four five six minus"
+    "one two three mult"
+    "zero clear equals divide"
+}
+
+.display{
+    grid-area: display;
+    background-color: grey;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.mult {
+    grid-area: mult;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.equals {
+    grid-area: equals;
+}
+
+.clear {
+    grid-area: clear;
+}
