@@ -18,7 +18,7 @@ body, html{
     "seven eight nine plus"
     "four five six minus"
     "one two three mult"
-    "zero clear equals divide"
+    "zero clear equals divi"
 }
 
 .display{
@@ -81,8 +81,8 @@ body, html{
     grid-area: zero;
 }
 
-.divide {
-    grid-area: divide;
+.divi {
+    grid-area: divi;
 }
 
 .equals {
