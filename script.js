@@ -12,14 +12,12 @@ const multiply = (a, b) => {
 
 const divide = (a, b) => {
     if(b == 0){
-    return 'ERROR'
-    } else {
-        if(a % b == 0){
-        return a / b;
-        } else {
-        return (a/b).toFixed(10)
-        }
+    return 'ERROR';
     }
+    if(a % b == 0){
+        return a / b;
+    }
+    return (a / b).toFixed(5);
 }
 
 const operate = (operator, a, b) => {
@@ -52,9 +50,6 @@ const mult = document.querySelector('.mult');
 const divi = document.querySelector('.divi');
 const equals = document.querySelector('.equals');
 
-
-
-
 const calc = () => {
 
     let temp = 0;
@@ -65,7 +60,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '1';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9) {
         display.innerText += '1';
         }
     }
@@ -74,7 +69,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '2';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '2';
         }
     }
@@ -83,7 +78,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '3';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '3';
         }
     }
@@ -92,7 +87,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '4';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '4';
         }
     }
@@ -101,7 +96,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '5';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '5';
         }
     }
@@ -110,7 +105,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '6';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '6';
         }
     }
@@ -119,7 +114,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '7';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '7';
         }
     }
@@ -128,7 +123,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '8';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '8';
         }
     }
@@ -137,7 +132,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '9';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '9';
         }
     }
@@ -146,7 +141,7 @@ const calc = () => {
         if(activeOperation == true){
         display.innerText = '0';
         activeOperation = false;
-        } else {
+        } else if(display.innerText.length < 9){
         display.innerText += '0';
         }
     }
@@ -165,7 +160,8 @@ const calc = () => {
         activeOperation = true;
         temp = parseInt(display.innerText);
         } else {
-        display.innerText = operate(operation, temp, parseInt(display.innerText));
+        display.innerText = 
+        operate(operation, temp, parseInt(display.innerText));
         temp = parseInt(display.innerText);
         operation = '+'
         activeOperation = true;
@@ -179,7 +175,8 @@ const calc = () => {
             activeOperation = true;
             temp = parseInt(display.innerText);
             } else {
-            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            display.innerText =
+             operate(operation, temp, parseInt(display.innerText));
             temp = parseInt(display.innerText);
             operation = '-'
             activeOperation = true;
@@ -192,7 +189,8 @@ const calc = () => {
             activeOperation = true;
             temp = parseInt(display.innerText);
             } else {
-            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            display.innerText =
+            operate(operation, temp, parseInt(display.innerText));
             temp = parseInt(display.innerText);
             operation = '*'
             activeOperation = true;
@@ -205,7 +203,8 @@ const calc = () => {
             activeOperation = true;
             temp = parseInt(display.innerText);
             } else {
-            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            display.innerText =
+            operate(operation, temp, parseInt(display.innerText));
             temp = parseInt(display.innerText);
             operation = '/'
             activeOperation = true;
@@ -216,12 +215,12 @@ const calc = () => {
         if(operation == null){
             return display.innerText;
         }
-        display.innerText = operate(operation, temp, parseInt(display.innerText));
+        display.innerText = 
+        operate(operation, temp, parseInt(display.innerText));
         temp = 0;
         operation = null;
         activeOperation = false;
     }
 }
-
 
 calc();

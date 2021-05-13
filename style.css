@@ -1,18 +1,23 @@
 body, html{
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 .container {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
+    padding-top: 3em;
+    padding-bottom: 2em;
 }
 
 .grid{
     display: grid;
+    background-color: #F3DFC1;
+    border: 3px solid black;
     grid-template-columns: 5rem 5rem 5rem 5rem;
-    grid-template-rows: 3rem 3rem 3rem 3rem 3rem;
+    grid-template-rows: 3rem 4rem 4rem 4rem 4rem;
     grid-template-areas: 
     "display display display display"
     "seven eight nine plus"
@@ -23,72 +28,101 @@ body, html{
 
 .display{
     grid-area: display;
-    background-color: grey;
+    background-color: #62B6CB;
+    border-bottom: 3px solid black;
     color: white;
-    font-size: 2rem;
+    font-size: 2.5em;
     text-align: right;
+    font-family: 'Orbitron', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    font-size: 1.5em;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button:hover{
+    font-size: 1.8em;
 }
 
 .seven {
     grid-area: seven;
+    background-color: #F3DFC1;
 }
 
 .eight {
     grid-area: eight;
+    background-color: #F3DFC1;
 }
 
 .nine {
     grid-area: nine;
+    background-color: #F3DFC1;
 }
 
 .plus {
     grid-area: plus;
+    background-color: #D1604D;
 }
 
 .four {
     grid-area: four;
+    background-color: #F3DFC1;
 }
 
 .five {
     grid-area: five;
+    background-color: #F3DFC1;
 }
 
 .six {
     grid-area: six;
+    background-color: #F3DFC1;
 }
 
 .minus {
     grid-area: minus;
+    background-color: #D1604D;
 }
 
 .one {
     grid-area: one;
+    background-color: #F3DFC1;
 }
 
 .two {
     grid-area: two;
+    background-color: #F3DFC1;
 }
 
 .three {
     grid-area: three;
+    background-color: #F3DFC1;
 }
 
 .mult {
     grid-area: mult;
+    background-color: #D1604D;
 }
 
 .zero {
     grid-area: zero;
+    background-color: #F3DFC1;
 }
 
 .divi {
     grid-area: divi;
+    background-color: #D1604D;
 }
 
 .equals {
     grid-area: equals;
+    background-color: #9EC19A;
 }
 
 .clear {
     grid-area: clear;
+    background-color: #9EC19A;
 }
