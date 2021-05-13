@@ -11,10 +11,14 @@ const multiply = (a, b) => {
 }
 
 const divide = (a, b) => {
-    if(a % b == 0){
-    return a / b;
+    if(b == 0){
+    return 'ERROR'
     } else {
-    return (a/b).toFixed(10)
+        if(a % b == 0){
+        return a / b;
+        } else {
+        return (a/b).toFixed(10)
+        }
     }
 }
 
@@ -53,7 +57,7 @@ const equals = document.querySelector('.equals');
 
 const calc = () => {
 
-    let temp = null;
+    let temp = 0;
     let operation = null;
     let activeOperation = false;
 
@@ -149,7 +153,7 @@ const calc = () => {
     
     clear.onclick = () => {
         display.innerText = '';
-        temp = null;
+        temp = 0;
         operation = null;
         activeOperation = false;
     }
@@ -209,9 +213,13 @@ const calc = () => {
     }
 
     equals.onclick = () => {
+        if(operation == null){
+            return display.innerText;
+        }
         display.innerText = operate(operation, temp, parseInt(display.innerText));
         temp = 0;
-    
+        operation = null;
+        activeOperation = false;
     }
 }
 
