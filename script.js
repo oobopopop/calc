@@ -11,7 +11,11 @@ const multiply = (a, b) => {
 }
 
 const divide = (a, b) => {
+    if(a % b == 0){
     return a / b;
+    } else {
+    return (a/b).toFixed(10)
+    }
 }
 
 const operate = (operator, a, b) => {
@@ -23,7 +27,7 @@ const operate = (operator, a, b) => {
        return multiply(a, b);
     } else if (operator == '/'){
        return divide(a, b)
-    }
+    } 
 }
 
 const display = document.querySelector('.display');
@@ -45,58 +49,169 @@ const divi = document.querySelector('.divi');
 const equals = document.querySelector('.equals');
 
 
-one.onclick = () => display.innerText += '1';
-two.onclick = () => display.innerText += '2';
-three.onclick = () => display.innerText += '3';
-four.onclick = () => display.innerText += '4';
-five.onclick = () => display.innerText += '5';
-six.onclick = () => display.innerText += '6';
-seven.onclick = () => display.innerText += '7';
-eight.onclick = () => display.innerText += '8';
-nine.onclick = () => display.innerText += '9';
-zero.onclick = () => display.innerText += '0';
-clear.onclick = () => display.innerText = '';
-
 
 
 const calc = () => {
-    let firstNum
-    let secondNum
-    let operation
+
+    let temp = null;
+    let operation = null;
+    let activeOperation = false;
+
+    one.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '1';
+        activeOperation = false;
+        } else {
+        display.innerText += '1';
+        }
+    }
+
+    two.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '2';
+        activeOperation = false;
+        } else {
+        display.innerText += '2';
+        }
+    }
+
+    three.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '3';
+        activeOperation = false;
+        } else {
+        display.innerText += '3';
+        }
+    }
+
+    four.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '4';
+        activeOperation = false;
+        } else {
+        display.innerText += '4';
+        }
+    }
+
+    five.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '5';
+        activeOperation = false;
+        } else {
+        display.innerText += '5';
+        }
+    }
+
+    six.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '6';
+        activeOperation = false;
+        } else {
+        display.innerText += '6';
+        }
+    }
+
+    seven.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '7';
+        activeOperation = false;
+        } else {
+        display.innerText += '7';
+        }
+    }
+
+    eight.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '8';
+        activeOperation = false;
+        } else {
+        display.innerText += '8';
+        }
+    }
+
+    nine.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '9';
+        activeOperation = false;
+        } else {
+        display.innerText += '9';
+        }
+    }
+
+    zero.onclick = () => {
+        if(activeOperation == true){
+        display.innerText = '0';
+        activeOperation = false;
+        } else {
+        display.innerText += '0';
+        }
+    }
+    
+    clear.onclick = () => {
+        display.innerText = '';
+        temp = null;
+        operation = null;
+        activeOperation = false;
+    }
 
     plus.onclick = () => {
-        
-        firstNum = parseInt(display.innerText);
+
+        if (operation == null){
         operation = '+';
-        display.innerText = '';
-        
+        activeOperation = true;
+        temp = parseInt(display.innerText);
+        } else {
+        display.innerText = operate(operation, temp, parseInt(display.innerText));
+        temp = parseInt(display.innerText);
+        operation = '+'
+        activeOperation = true;
+        }
     }
 
     minus.onclick = () => {
-        firstNum = parseInt(display.innerText);
-        operation = '-';
-        display.innerText = '';
+       
+        if (operation == null){
+            operation = '-';
+            activeOperation = true;
+            temp = parseInt(display.innerText);
+            } else {
+            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            temp = parseInt(display.innerText);
+            operation = '-'
+            activeOperation = true;
+            }
     }
 
     mult.onclick = () => {
-        firstNum = parseInt(display.innerText);
-        operation = '*';
-        display.innerText = '';
+        if (operation == null){
+            operation = '*';
+            activeOperation = true;
+            temp = parseInt(display.innerText);
+            } else {
+            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            temp = parseInt(display.innerText);
+            operation = '*'
+            activeOperation = true;
+            }
     }
 
     divi.onclick = () => {
-        firstNum = parseInt(display.innerText);
-        operation = '/';
-        display.innerText = '';
+        if (operation == null){
+            operation = '/';
+            activeOperation = true;
+            temp = parseInt(display.innerText);
+            } else {
+            display.innerText = operate(operation, temp, parseInt(display.innerText));
+            temp = parseInt(display.innerText);
+            operation = '/'
+            activeOperation = true;
+            }
     }
 
     equals.onclick = () => {
-        secondNum = parseInt(display.innerText);
-        display.innerText =
-        operate(operation, firstNum, secondNum);
-        firstNum = undefined;
-        secondNum = undefined;
-
+        display.innerText = operate(operation, temp, parseInt(display.innerText));
+        temp = 0;
+    
     }
 }
 
